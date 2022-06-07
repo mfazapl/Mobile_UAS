@@ -1,4 +1,4 @@
-package com.UAS.genshinimpact
+package com.UAS.hololiveviewer
 
 import org.junit.Test
 

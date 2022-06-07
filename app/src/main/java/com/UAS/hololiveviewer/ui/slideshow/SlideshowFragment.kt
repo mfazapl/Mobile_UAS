@@ -1,4 +1,4 @@
-package com.UAS.genshinimpact.ui.slideshow
+package com.UAS.hololiveviewer.ui.slideshow
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.UAS.genshinimpact.databinding.FragmentSlideshowBinding
+import com.UAS.hololiveviewer.databinding.FragmentSlideshowBinding
 
 class SlideshowFragment : Fragment() {
 

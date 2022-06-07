@@ -1,4 +1,4 @@
-package com.UAS.genshinimpact.ui.home
+package com.UAS.hololiveviewer.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
