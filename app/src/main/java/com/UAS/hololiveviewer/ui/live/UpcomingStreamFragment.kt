@@ -5,38 +5,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.UAS.hololiveviewer.R
 import com.UAS.hololiveviewer.databinding.FragmentUpcomingStreamBinding
+import com.google.android.material.divider.MaterialDividerItemDecoration
 
 class UpcomingStreamFragment : Fragment() {
-
-    private var _binding: FragmentUpcomingStreamBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private val viewModel: UpcomingStreamViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val upcomingStreamViewModel =
-            ViewModelProvider(this).get(UpcomingStreamViewModel::class.java)
+    ): View? {
+        val binding = FragmentUpcomingStreamBinding.inflate(inflater)
+        viewModel.getHololiveData()
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
 
-        _binding = FragmentUpcomingStreamBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        //@TODO
+        //rv on click -> into detail
 
-        val textView: TextView = binding.textHome
-        upcomingStreamViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
-    }
+        (activity as AppCompatActivity).supportActionBar?.title = "Upcoming Stream List"
+        binding.rv.addItemDecoration(
+            MaterialDividerItemDecoration(
+                requireContext(),
+                LinearLayoutManager.VERTICAL
+            )
+        )
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return binding.root
     }
 }
