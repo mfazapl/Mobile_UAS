@@ -5,12 +5,8 @@
 
     <data>
         <variable
-            name="liveItem"
-            type="com.UAS.hololiveviewer.data.live.Upcoming" />
-
-        <variable
             name="viewModel"
-            type="com.UAS.hololiveviewer.ui.live.UpcomingStreamViewModel" />
+            type="com.uas.hololiveviewer.ui.live.UpcomingStreamViewModel" />
     </data>
 
     <RelativeLayout
@@ -18,12 +14,12 @@
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
+            android:id="@+id/rvUpcoming"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:listUpcomingData="@{viewModel.upcomingVideo}"
+            app:listUpcoming="@{viewModel.hololiveUpcomings}"
             tools:listitem="@layout/upcoming_stream_item"/>
 
         <ImageView

@@ -6,11 +6,11 @@
     <data>
         <variable
             name="holoItem"
-            type="com.UAS.hololiveviewer.data.live.Upcoming" />
+            type="com.uas.hololiveviewer.data.live.Upcoming" />
 
         <variable
             name="clickListener"
-            type="com.UAS.hololiveviewer.ui.live.UpcomingListener" />
+            type="com.uas.hololiveviewer.ui.live.UpcomingListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="@{holoItem.live_schedule}"
+                android:text="@{holoItem.liveSchedule}"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
         </LinearLayout>

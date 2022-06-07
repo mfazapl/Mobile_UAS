@@ -7,19 +7,31 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.UAS.hololiveviewer.ui.live.UpcomingStreamFragment"
+        android:name="com.uas.hololiveviewer.ui.live.UpcomingStreamFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_upcoming_stream" />
+        tools:layout="@layout/fragment_upcoming_stream" >
+        <action
+            android:id="@+id/action_nav_home_to_upcomingStreamDetailFragment"
+            app:destination="@id/upcomingStreamDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_characters"
-        android:name="com.UAS.hololiveviewer.ui.characters.CharactersFragment"
+        android:name="com.uas.hololiveviewer.ui.characters.CharactersFragment"
         android:label="@string/menu_characters"
         tools:layout="@layout/fragment_characters" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.UAS.hololiveviewer.ui.slideshow.SlideshowFragment"
+        android:name="com.uas.hololiveviewer.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/upcomingStreamDetailFragment"
+        android:name="com.uas.hololiveviewer.ui.live.UpcomingStreamDetailFragment"
+        android:label="UpcomingStreamDetailFragment" >
+        <action
+            android:id="@+id/action_upcomingStreamDetailFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
