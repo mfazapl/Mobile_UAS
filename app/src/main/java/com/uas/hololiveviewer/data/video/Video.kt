@@ -42,5 +42,5 @@ data class Video(
     val title: String? = null,
 
     @Json(name="yt_video_key")
-    val yt_video_key: String? = null,
+    val yt_video_key: String? = null
 )
