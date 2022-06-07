@@ -1,10 +1,10 @@
 package com.uas.hololiveviewer.network
 
-import com.uas.hololiveviewer.data.channel.DataChannel
-import com.uas.hololiveviewer.data.video.DataVideo
-import  com.squareup.moshi.Moshi
+import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.uas.hololiveviewer.data.channel.DataChannel
 import com.uas.hololiveviewer.data.live.DataUpcomingStream
+import com.uas.hololiveviewer.data.video.DataVideo
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET

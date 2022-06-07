@@ -29,6 +29,8 @@ class UpcomingStreamViewModel : ViewModel() {
 
     val text: LiveData<String> = _text
 
+    var pesanError: String = "TEXT"
+
     init {
         getHololiveData()
     }
